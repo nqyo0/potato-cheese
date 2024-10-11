@@ -1,10 +1,14 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
+import plotly.express as px # type: ignore
 import os
 
-# Load the data
-data = pd.read_csv("https://drive.google.com/file/d/1X-qnbxHtEQ9kYz6uz34DKd5CyrPD1HZL/view?usp=drive_link")
+# Load the CSV from Google Drive using the direct link
+url = "https://drive.google.com/uc?id=1X-qnbxHtEQ9kYz6uz34DKd5CyrPD1HZL&export=download"
+data = pd.read_csv(url)
+
+# Print the first few rows to verify
+print(data.head())
 
 # Title and description
 st.title("Geographical Distribution of Customers and Sellers")
